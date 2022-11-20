@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Piezo" />
+		<Option execution_dir="./" />
+		<Option pch_mode="2" />
+		<Option default_target="win_gcc" />
+		<Option compiler="null" />
+		<Build>
+			<Target title="win_gcc">
+				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output=".objs/$(TARGET_NAME)" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="`$(#WX_CONFIG) --cflags`" />
+					<Add directory="src/Utilities" />
+					<Add directory="src/Parsing" />
+					<Add directory="src/Variables" />
+					<Add directory="src/Expression" />
+					<Add directory="src/Functions" />
+					<Add directory="src/Commands" />
+					<Add directory="src/Operators" />
+					<Add directory="src/wxForms" />
+					<Add directory="src/Graphics" />
+					<Add directory="src" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add option="`$(#WX_CONFIG) --rcflags`" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="`$(#WX_CONFIG) --libs base,core,xml,adv,html,propgrid,xrc`" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="win_gcc;" />
+		</VirtualTargets>
+		<Unit filename="ChartView.cpp" />
+		<Unit filename="ChartViewBase.cpp" />
+		<Unit filename="ChartViewBitmaps.cpp" />
+		<Unit filename="ElementPlotData.cpp" />
+		<Unit filename="Forms.cpp" />
+		<Unit filename="Forms_bitmaps.cpp" />
+		<Unit filename="MainFrame.cpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="wxMathPlot/mathplot.cpp" />
+		<Unit filename="wxMathPlot/mathplot.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
